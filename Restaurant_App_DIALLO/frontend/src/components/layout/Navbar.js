@@ -45,8 +45,8 @@ const NavBar = ({ children }) => {
                     </a>
                     <Link to='/' className="logo">
                         <div className="logo-lg">
-                            <span className="light-logo"><img src="assets/images/logo.jpeg" alt="logo" /></span>
-                            <span className="dark-logo"><img src="assets/images/logo.jpeg" alt="logo" /></span>
+                            <span className="light-logo"><img src="assets/images/logo.png" alt="logo" style={{height: '55px', objectFit: 'contain'}} /></span>
+                            <span className="dark-logo"><img src="assets/images/logo.png" alt="logo" style={{height: '55px', objectFit: 'contain'}} /></span>
                         </div>
                     </Link>
                 </div>

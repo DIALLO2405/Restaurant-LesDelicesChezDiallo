@@ -39,7 +39,10 @@ const Login = ({ history }) => {
 							<div className="col-lg-5 col-md-5 col-12">
 								<div className="bg-white rounded10 shadow-lg">
 									<div className="content-top-agile p-20 pb-0">
-										<div style={{textAlign:"center"}}><div style={{fontSize:"2.5rem"}}>🍽️</div><h3 style={{color:"#c0392b",fontWeight:"900",fontSize:"1.3rem"}}>LES DÉLICES CHEZ DIALLO</h3><p style={{color:"#e67e22",fontWeight:"600",fontSize:"0.85rem"}}>🌍 Cuisine Ivoirienne Authentique</p></div>
+										<div style={{textAlign:"center"}}>
+									<img src="/assets/images/logo.png" alt="Diallo Logo" style={{width:"160px", height:"160px", objectFit:"contain", marginBottom:"8px"}} />
+									<p style={{color:"#8B4513",fontWeight:"600",fontSize:"0.85rem",marginTop:"-4px"}}>Saveurs d'Afrique - Cuisine Moderne</p>
+								</div>
 										<p className="mb-0">Veuillez entrer vos identifiants SVP.</p>
 									</div>
 									<div className="p-40">

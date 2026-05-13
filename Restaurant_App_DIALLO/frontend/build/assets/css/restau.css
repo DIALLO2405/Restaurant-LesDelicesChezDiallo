@@ -1,0 +1,69 @@
+/* ============================================================
+   LES DÉLICES CHEZ DIALLO — Styles personnalisés
+   Couleurs inspirées du drapeau ivoirien et de la culture locale
+   ============================================================ */
+
+:root {
+  --orange-ivoire: #F77F00;
+  --vert-ivoire:   #009A44;
+  --rouge-piment:  #C0392B;
+  --brun-terre:    #6B3A2A;
+  --jaune-or:      #F0A500;
+  --bg-clair:      #FFF8F0;
+}
+
+#sidebar a  { color: #fff; }
+#sidebar i  { color: rgba(255,255,255,0.85); }
+#sidebar a:hover { color: var(--jaune-or) !important; }
+.user-body a:hover { color: var(--orange-ivoire); }
+
+.main-header {
+  background: linear-gradient(135deg, #1a0a00 0%, #3d1c00 100%) !important;
+  border-bottom: 3px solid var(--orange-ivoire);
+}
+
+.main-sidebar {
+  background: linear-gradient(180deg, #1a0a00 0%, #2d1200 100%) !important;
+  border-right: 2px solid var(--orange-ivoire);
+}
+
+.btn-danger  { background-color: var(--rouge-piment) !important; border-color: var(--rouge-piment) !important; }
+.btn-success { background-color: var(--vert-ivoire) !important;  border-color: var(--vert-ivoire) !important; }
+.btn-info    { background-color: var(--orange-ivoire) !important; border-color: var(--orange-ivoire) !important; color:#fff !important; }
+.btn-primary { background-color: var(--brun-terre) !important;   border-color: var(--brun-terre) !important; }
+.btn-warning { background-color: var(--jaune-or) !important;     border-color: var(--jaune-or) !important; color:#fff !important; }
+
+.text-primary { color: var(--orange-ivoire) !important; }
+
+.badge.bg-success { background-color: var(--vert-ivoire) !important; }
+.badge.bg-danger  { background-color: var(--rouge-piment) !important; }
+.badge.bg-warning { background-color: var(--jaune-or) !important; }
+.badge.bg-info    { background-color: var(--orange-ivoire) !important; }
+.badge.bg-primary { background-color: var(--brun-terre) !important; }
+
+.card { border-radius:10px; box-shadow:0 3px 12px rgba(0,0,0,0.1); border:1px solid rgba(247,127,0,0.12); }
+.card-header { border-bottom:2px solid var(--orange-ivoire); background:rgba(247,127,0,0.06); border-radius:10px 10px 0 0 !important; }
+.card-title { color:var(--brun-terre); font-weight:700; }
+
+.content-top-agile { border-bottom:3px solid var(--orange-ivoire); background:linear-gradient(135deg,#fff8f0,#fff); border-radius:10px 10px 0 0; padding:24px 20px 16px !important; }
+
+.table thead th { background:var(--brun-terre); color:#fff; border:none; font-weight:700; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.5px; }
+.table-hover tbody tr:hover { background-color:rgba(247,127,0,0.07); cursor:pointer; }
+
+.small-box.bg-success { background:var(--vert-ivoire) !important; }
+.small-box.bg-info    { background:var(--orange-ivoire) !important; }
+.small-box.bg-danger  { background:var(--rouge-piment) !important; }
+.small-box.bg-dark    { background:var(--brun-terre) !important; }
+
+.content-wrapper { background:var(--bg-clair); }
+.content-header h1 { color:var(--brun-terre); font-weight:800; }
+
+.form-control:focus { border-color:var(--orange-ivoire); box-shadow:0 0 0 0.2rem rgba(247,127,0,0.25); }
+
+.ReactModal__Content { border-radius:12px !important; border:2px solid var(--orange-ivoire) !important; }
+
+.main-sidebar center p { color:rgba(255,255,255,0.5); font-size:0.72rem; padding:8px 12px; border-top:1px solid rgba(247,127,0,0.3); margin-top:12px; }
+.main-sidebar center strong { color:var(--orange-ivoire); font-size:0.8rem; }
+
+.card, .small-box { transition:transform 0.2s ease, box-shadow 0.2s ease; }
+.card:hover { transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.12); }

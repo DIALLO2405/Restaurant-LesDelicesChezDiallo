@@ -10,7 +10,7 @@ const NotFound = () => {
                     <h4 className='text-center mb-2 mb-sm-5'>Page Non Trouvée</h4>
                         <img 
                             style={{ witdh: "50%", height: "200px", objectFit: "contain" }}
-                            src="/assets/images/logo.jpeg"
+                            src="/assets/images/logo.png"
                             alt="Non trouvé"
                         />
                         <button className='col-md-3 col-sm-6 col-12 btn btn-primary mt-15'>

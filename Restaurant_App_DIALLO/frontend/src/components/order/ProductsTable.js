@@ -10,6 +10,20 @@ import Pagination from "../Pagination";
 /* actions */
 import { listProducts } from "../../actions/productActions";
 
+// Images statiques du menu (6 images pour les plats)
+const menuImages = [
+    "/assets/images/menu/menu1.png",
+    "/assets/images/menu/menu2.png",
+    "/assets/images/menu/menu3.png",
+    "/assets/images/menu/menu4.png",
+    "/assets/images/menu/menu5.png",
+    "/assets/images/menu/menu6.png",
+];
+
+// Attribue une image selon l'id du produit (rotation cyclique)
+const getMenuImage = (productId) => menuImages[(productId - 1) % menuImages.length];
+
+
 const ProductsTable = ({
     productsInOrder,
     setProductsInOrder,
@@ -106,54 +120,50 @@ const ProductsTable = ({
     );
 
     const renderProducts = () => (
-        <table id="productsTable" className="table table-bordered table-hover ">
-            <thead
-                style={{
-                    color: "#fff",
-                }}
-                className="bg-info"
-            >
-                <tr>
-                    <th>#</th>
-                    <th>Nom</th>
-                    <th>Prix</th>
-                    <th>Stock</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {products.map((product) => (
-                    <tr key={product.id}>
-                        <td>{product.id}</td>
-                        <td>{product.name}</td>
-                        <td>{product.price} FCFA</td>
-                        <td>{showStock(product)}</td>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", padding: "8px 0" }}>
+            {products.map((product) => (
+                <div key={product.id} style={{
+                    width: "180px",
+                    borderRadius: "12px",
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.12)",
+                    overflow: "hidden",
+                    background: "#fff",
+                    display: "flex",
+                    flexDirection: "column",
+                    transition: "transform 0.2s",
+                }}>
+                    <div style={{ height: "120px", overflow: "hidden", background: "#f5f0e8" }}>
+                        <img
+                            src={getMenuImage(product.id)}
+                            alt={product.name}
+                            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                            onError={(e) => { e.target.src = "/assets/images/menu/menu1.png"; }}
+                        />
+                    </div>
+                    <div style={{ padding: "10px", flexGrow: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <strong style={{ fontSize: "0.9rem", color: "#3d2005" }}>{product.name}</strong>
+                        <span style={{ color: "#c0392b", fontWeight: "700", fontSize: "0.85rem" }}>{product.price} FCFA</span>
+                        <span style={{ fontSize: "0.75rem", color: showStock(product) > 0 ? "#27ae60" : "#e74c3c" }}>
+                            {showStock(product) > 0 ? `Stock: ${showStock(product)}` : "Rupture"}
+                        </span>
+                    </div>
+                    <div style={{ padding: "0 10px 10px" }}>
                         {inOrder(product, productsInOrder) ? (
-                            <td className="text-center">
-                                <button disabled className="btn btn-primary">
-                                    En cours
-                                </button>
-                            </td>
+                            <button disabled className="btn btn-primary btn-sm w-100">En cours</button>
                         ) : product.stock > 0 ? (
-                            <td className="text-center">
-                                <button
-                                    className="btn btn-success"
-                                    onClick={(e) => addProduct(e, product)}
-                                >
-                                    <i className="bi bi-plus-circle-fill"></i>
-                                </button>
-                            </td>
+                            <button
+                                className="btn btn-success btn-sm w-100"
+                                onClick={(e) => addProduct(e, product)}
+                            >
+                                <i className="bi bi-plus-circle-fill"></i> Ajouter
+                            </button>
                         ) : (
-                            <td className="text-center">
-                                <button disabled className="btn btn-danger">
-                                    Rupture de stock
-                                </button>
-                            </td>
+                            <button disabled className="btn btn-danger btn-sm w-100">Rupture</button>
                         )}
-                    </tr>
-                ))}
-            </tbody>
-        </table>
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 
     return (
